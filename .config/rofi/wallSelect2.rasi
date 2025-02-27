@@ -1,0 +1,108 @@
+// # z0mbi3 -  https://github.com/gh0stzk/dotfiles
+@import "~/.cache/wal/colors-rofi-dark-custom"
+
+configuration {
+    modi:                        "drun";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+    font:                        "Terminus Bold 14";
+    
+    //hover-select:				 true;
+	//me-select-entry:			 "";
+	//me-accept-entry:			 "MousePrimary";
+}
+
+//----- Global Properties -----//
+
+* {
+main-bg: #282828E6;
+main-fg: #fbf1c7;
+select-bg: #d79921;
+select-fg: #282828;
+}
+
+//----- Main Window -----//
+
+window {
+    enabled:                     true;
+    fullscreen:                  true;
+    width:                       40% 50%;
+    transparency:                "real";
+    cursor:                      "default";
+    spacing:                     0px;
+    padding:                     0px;
+    border:                      0px;
+    border-radius:               0px;
+    border-color:                transparent;
+    background-color:            transparent;
+}
+
+//----- Main Box -----//
+
+mainbox {
+    enabled:                     true;
+    children:                    [ "listview" ];
+    background-color:            @main-bg;
+}
+
+//----- Listview -----//
+
+listview {
+    enabled:                     true;
+    columns:                     3;
+    lines:                       4;
+    spacing:                     0px;
+    padding:                     0px;
+    cycle:                       true;
+    dynamic:                     false;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+
+//----- Elements -----//
+
+element {
+    enabled:                     true;
+    orientation:                 horizontal;
+    spacing:                     0px;
+    padding:                     25px;
+    border-radius:               0px;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+
+@media(max-aspect-ratio: 1.8) {
+    element {
+        orientation:             vertical;
+    }
+}
+
+element selected.normal {
+    background-color:            @selected-normal-background;
+    text-color:                  @selected-normal-foreground;
+}
+
+element-icon {
+    size:                        0.02%;
+    cursor:                      inherit;
+    border-radius:               0px;
+    background-color:            transparent;
+    text-color:                  inherit;
+    padding:                     0px;
+}
+
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    padding:                     0.18%;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
